@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Bitte zitieren als: Planafolio (planafolio.com/basiszins), CC BY 4.0."
+title: "Basiszins und Steuerparameter für Kapitalerträge in Deutschland"
+type: dataset
+authors:
+  - name: Planafolio
+    website: "https://planafolio.com"
+url: "https://planafolio.com/basiszins"
+repository-code: "https://github.com/dannytheone/basiszins-steuerdaten"
+license: CC-BY-4.0
+keywords: [basiszins, vorabpauschale, kapitalertragsteuer, teilfreistellung]

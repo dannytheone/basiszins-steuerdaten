@@ -1,0 +1,15 @@
+parameter,variante,wert,einheit,gueltig_ab,gueltig_bis,rechtsgrundlage
+abgeltungsteuer,,0.25,anteil,2009,,§ 32d Abs. 1 S. 1 EStG
+solidaritaetszuschlag,auf_abgeltungsteuer,0.055,anteil,,,§ 4 S. 1 SolZG
+effektive_belastung,none,0.26375,anteil,2026,,§ 32d Abs. 1 S. 3–5 EStG
+effektive_belastung,bavariaBw,0.278186,anteil,2026,,§ 32d Abs. 1 S. 3–5 EStG
+effektive_belastung,other,0.279951,anteil,2026,,§ 32d Abs. 1 S. 3–5 EStG
+sparerpauschbetrag,einzeln,801,eur,2009,2022,§ 20 Abs. 9 EStG (Unternehmensteuerreformgesetz 2008)
+sparerpauschbetrag,zusammenveranlagt,1602,eur,2009,2022,§ 20 Abs. 9 EStG (Unternehmensteuerreformgesetz 2008)
+sparerpauschbetrag,einzeln,1000,eur,2023,,§ 20 Abs. 9 EStG i. d. F. des Jahressteuergesetzes 2022
+sparerpauschbetrag,zusammenveranlagt,2000,eur,2023,,§ 20 Abs. 9 EStG i. d. F. des Jahressteuergesetzes 2022
+teilfreistellung,equity,0.3,anteil,2018,,§ 20 Abs. 1 S. 1 InvStG
+teilfreistellung,mixed,0.15,anteil,2018,,§ 20 Abs. 2 S. 1 InvStG
+teilfreistellung,realEstate,0.6,anteil,2018,,§ 20 Abs. 3 S. 1 Nr. 1 InvStG
+teilfreistellung,realEstateForeign,0.8,anteil,2018,,§ 20 Abs. 3 S. 1 Nr. 2 InvStG
+teilfreistellung,none,0,anteil,2018,,keine Teilfreistellung

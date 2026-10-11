@@ -1,0 +1,73 @@
+{
+    "dataset": "Basiszins zur Berechnung der Vorabpauschale (§ 18 Abs. 4 InvStG)",
+    "description": "Vom Bundesfinanzministerium jährlich festgesetzter Basiszins, abgeleitet aus der Rendite langfristiger öffentlicher Anleihen am ersten Börsentag des Jahres. Bei negativem Basiszins fällt keine Vorabpauschale an.",
+    "source": "https://planafolio.com/basiszins",
+    "license": "CC BY 4.0",
+    "attribution": "Planafolio (planafolio.com/basiszins)",
+    "csv": "https://planafolio.com/api/open-data/basiszins/csv",
+    "years": [
+        {
+            "year": 2018,
+            "rate": 0.0087,
+            "ratePercent": 0.87,
+            "bmfLetter": "2018-01-04",
+            "vorabpauschaleApplies": true
+        },
+        {
+            "year": 2019,
+            "rate": 0.0052,
+            "ratePercent": 0.52,
+            "bmfLetter": "2019-01-09",
+            "vorabpauschaleApplies": true
+        },
+        {
+            "year": 2020,
+            "rate": 0.0007,
+            "ratePercent": 0.07,
+            "bmfLetter": "2020-01-29",
+            "vorabpauschaleApplies": true
+        },
+        {
+            "year": 2021,
+            "rate": -0.0045,
+            "ratePercent": -0.45,
+            "bmfLetter": "2021-01-06",
+            "vorabpauschaleApplies": false
+        },
+        {
+            "year": 2022,
+            "rate": -0.0005,
+            "ratePercent": -0.05,
+            "bmfLetter": "2022-01-07",
+            "vorabpauschaleApplies": false
+        },
+        {
+            "year": 2023,
+            "rate": 0.0255,
+            "ratePercent": 2.55,
+            "bmfLetter": "2023-01-04",
+            "vorabpauschaleApplies": true
+        },
+        {
+            "year": 2024,
+            "rate": 0.0229,
+            "ratePercent": 2.29,
+            "bmfLetter": "2024-01-05",
+            "vorabpauschaleApplies": true
+        },
+        {
+            "year": 2025,
+            "rate": 0.0253,
+            "ratePercent": 2.53,
+            "bmfLetter": "2025-01-10",
+            "vorabpauschaleApplies": true
+        },
+        {
+            "year": 2026,
+            "rate": 0.032,
+            "ratePercent": 3.2,
+            "bmfLetter": "2026-01-13",
+            "vorabpauschaleApplies": true
+        }
+    ]
+}

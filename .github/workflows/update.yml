@@ -1,0 +1,30 @@
+name: Daten aktualisieren
+on:
+  schedule:
+    - cron: "17 6 * * 1"   # montags; der Basiszins erscheint Anfang Januar
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Daten von planafolio.com laden
+        run: |
+          set -euo pipefail
+          for n in basiszins kapitalertragsteuer; do
+            curl -sSf --retry 3 "https://planafolio.com/api/open-data/$n" | python3 -m json.tool --no-ensure-ascii > "data/$n.json.new"
+            curl -sSf --retry 3 "https://planafolio.com/api/open-data/$n/csv" > "data/$n.csv.new"
+            # Nur gültige, nicht leere Antworten übernehmen
+            test -s "data/$n.csv.new" && head -1 "data/$n.csv.new" | grep -q ","
+            mv "data/$n.json.new" "data/$n.json"; mv "data/$n.csv.new" "data/$n.csv"
+          done
+          python3 scripts/readme_table.py
+      - name: Änderungen committen
+        run: |
+          if git diff --quiet; then echo "keine Änderung"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Daten aktualisiert ($(date -u +%F))"
+          git push

@@ -1,0 +1,91 @@
+{
+    "dataset": "Steuerparameter für Kapitalerträge in Deutschland (Privatvermögen)",
+    "description": "Abgeltungsteuer, Solidaritätszuschlag, effektive Belastung mit Kirchensteuer, Sparerpauschbetrag und Teilfreistellungssätze für Investmentfonds im Privatvermögen. Anteile als Dezimalzahl (0.25 = 25 %).",
+    "taxYear": 2026,
+    "verifiedAt": "2026-09-29",
+    "source": "https://planafolio.com/kapitalertragsteuer-rechner",
+    "license": "CC BY 4.0",
+    "attribution": "Planafolio (planafolio.com/kapitalertragsteuer-rechner)",
+    "csv": "https://planafolio.com/api/open-data/kapitalertragsteuer/csv",
+    "abgeltungsteuer": {
+        "rate": 0.25,
+        "legalBasis": "§ 32d Abs. 1 S. 1 EStG"
+    },
+    "solidaritaetszuschlag": {
+        "rateOnTax": 0.055,
+        "legalBasis": "§ 4 S. 1 SolZG"
+    },
+    "effectiveRates": [
+        {
+            "churchTax": "none",
+            "label": "ohne Kirchensteuer",
+            "churchTaxRate": 0,
+            "effectiveRate": 0.26375,
+            "legalBasis": "§ 32d Abs. 1 S. 3–5 EStG"
+        },
+        {
+            "churchTax": "bavariaBw",
+            "label": "Kirchensteuer 8 % (Bayern, Baden-Württemberg)",
+            "churchTaxRate": 0.08,
+            "effectiveRate": 0.278186,
+            "legalBasis": "§ 32d Abs. 1 S. 3–5 EStG"
+        },
+        {
+            "churchTax": "other",
+            "label": "Kirchensteuer 9 % (übrige Bundesländer)",
+            "churchTaxRate": 0.09,
+            "effectiveRate": 0.279951,
+            "legalBasis": "§ 32d Abs. 1 S. 3–5 EStG"
+        }
+    ],
+    "sparerpauschbetrag": [
+        {
+            "from": 2009,
+            "to": 2022,
+            "single": 801,
+            "joint": 1602,
+            "legalBasis": "§ 20 Abs. 9 EStG (Unternehmensteuerreformgesetz 2008)",
+            "currency": "EUR"
+        },
+        {
+            "from": 2023,
+            "to": null,
+            "single": 1000,
+            "joint": 2000,
+            "legalBasis": "§ 20 Abs. 9 EStG i. d. F. des Jahressteuergesetzes 2022",
+            "currency": "EUR"
+        }
+    ],
+    "teilfreistellung": [
+        {
+            "fundType": "equity",
+            "label": "Aktienfonds (fortlaufend mehr als 50 % Aktien)",
+            "rate": 0.3,
+            "legalBasis": "§ 20 Abs. 1 S. 1 InvStG"
+        },
+        {
+            "fundType": "mixed",
+            "label": "Mischfonds (fortlaufend mindestens 25 % Aktien)",
+            "rate": 0.15,
+            "legalBasis": "§ 20 Abs. 2 S. 1 InvStG"
+        },
+        {
+            "fundType": "realEstate",
+            "label": "Immobilienfonds (mindestens 51 % Immobilien)",
+            "rate": 0.6,
+            "legalBasis": "§ 20 Abs. 3 S. 1 Nr. 1 InvStG"
+        },
+        {
+            "fundType": "realEstateForeign",
+            "label": "Immobilienfonds Ausland (mindestens 51 % Auslandsimmobilien)",
+            "rate": 0.8,
+            "legalBasis": "§ 20 Abs. 3 S. 1 Nr. 2 InvStG"
+        },
+        {
+            "fundType": "none",
+            "label": "Sonstige Fonds, Einzelaktien, Anleihen",
+            "rate": 0,
+            "legalBasis": "keine Teilfreistellung"
+        }
+    ]
+}

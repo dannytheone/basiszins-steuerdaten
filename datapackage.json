@@ -1,0 +1,48 @@
+{
+  "name": "basiszins-steuerdaten",
+  "title": "Basiszins und Steuerparameter für Kapitalerträge in Deutschland",
+  "description": "Basiszins zur Berechnung der Vorabpauschale (§ 18 Abs. 4 InvStG) seit 2018 sowie Abgeltungsteuer, Solidaritätszuschlag, effektive Belastung mit Kirchensteuer, Sparerpauschbetrag und Teilfreistellungssätze (Privatvermögen).",
+  "homepage": "https://planafolio.com/basiszins",
+  "licenses": [{ "name": "CC-BY-4.0", "path": "https://creativecommons.org/licenses/by/4.0/", "title": "Creative Commons Attribution 4.0" }],
+  "sources": [
+    { "title": "Planafolio – Basiszins", "path": "https://planafolio.com/basiszins" },
+    { "title": "Planafolio – Kapitalertragsteuer-Rechner", "path": "https://planafolio.com/kapitalertragsteuer-rechner" }
+  ],
+  "keywords": ["basiszins", "vorabpauschale", "kapitalertragsteuer", "abgeltungsteuer", "teilfreistellung", "sparerpauschbetrag", "invstg", "germany", "tax"],
+  "resources": [
+    {
+      "name": "basiszins",
+      "path": "data/basiszins.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          { "name": "jahr", "type": "year", "description": "Kalenderjahr, für das der Basiszins gilt" },
+          { "name": "basiszins_prozent", "type": "number", "description": "Basiszins in Prozent" },
+          { "name": "bmf_schreiben", "type": "date", "description": "Datum des BMF-Schreibens" },
+          { "name": "vorabpauschale_faellt_an", "type": "string", "constraints": { "enum": ["ja", "nein"] }, "description": "nein bei negativem Basiszins" }
+        ],
+        "primaryKey": ["jahr"]
+      }
+    },
+    {
+      "name": "kapitalertragsteuer",
+      "path": "data/kapitalertragsteuer.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          { "name": "parameter", "type": "string" },
+          { "name": "variante", "type": "string" },
+          { "name": "wert", "type": "number" },
+          { "name": "einheit", "type": "string", "constraints": { "enum": ["anteil", "eur"] }, "description": "anteil = Dezimalzahl (0.25 = 25 %)" },
+          { "name": "gueltig_ab", "type": "year" },
+          { "name": "gueltig_bis", "type": "year" },
+          { "name": "rechtsgrundlage", "type": "string" }
+        ]
+      }
+    }
+  ]
+}
